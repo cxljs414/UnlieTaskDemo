@@ -1,3 +1,92 @@
 <resources>
-    <string name="app_name">UnlieTaskDemo</string>
+    <string name="time_gape">60000</string><!--获取取件单推送信息调用接口间隔时间-->
+    <string name="getPullInfo_url">http://qsapp.7fresh.com/pushMessage/getAndroidPushMessage</string><!--获取取件单推送信息接口地址-->
+    <string name="pullInfo_text">您有N条新的取件单待处理</string><!--推送消息模板-->
+    <string name="collection_bill_url">http://qsapp.7fresh.com/deliveryOrderTask/getCOrder?collectionId=</string><!--集合单访问接口URL-->
+    <string name="notifyTitle">提示</string>
+    <string name="notifyMsg">当前应用缺少必要权限。\n\n请点击\"设置\"-\"权限\"-打开所需权限。</string>
+    <string name="setting">设置</string>
+    <string name="cancel">取消</string>
+    <string name="title_activity_qslogin">登录</string>
+    <string name="app_back_hint">再按一次退出程序</string>
+    <string name="no_network">无法连接到服务器</string>
+
+    <string name="title_delivery_list">待配送</string>
+    <string name="item_home_delivery_list_order_id">宅配订单号 : %s</string>
+    <string name="item_home_delivery_list_id">宅配运单号 : %s</string>
+    <string name="item_delivery_list_order_id">%d</string>
+    <string name="item_delivery_list_consignee">%s</string>
+    <string name="item_delivery_list_mobilePhone">%s</string>
+    <string name="item_delivery_list_address">%s</string>
+    <string name="detail_distance">约%.2f米</string>
+    <string name="detail_distance_km">约%.2f千米</string>
+    <string name="detail_count">%s</string>
+    <string name="detail_create_order_time">%s</string>
+    <string name="detail_order_list">%1s&#160;&#160;&#160;&#160;X%2s</string>
+
+    <string name="title_delivery_detail">配送详情</string>
+
+    <string name="title_order_detail">订单详情</string>
+    <string name="title_complete_detail">已完成详情</string>
+    <string name="title_return_order">上门取件</string>
+    <string name="title_return_order_detail">待取件详情</string>
+
+    <!-- Performance -->
+    <string name="performance_detail_title_delivery_order">运单详情</string>
+    <string name="performance_detail_title_return_order">取件单详情</string>
+    <string name="performance_detail_title_home_delivery_order">宅配详情</string>
+
+    <string name="title_home_delivery">宅配</string>
+    <array name="home_delivery">
+        <item>未接单</item>
+        <item>待配送</item>
+    </array>
+
+    <string name="submit_success">提交成功</string>
+    <string name="alert_delivery_cancel">确认取消接单?</string>
+    <string name="alert_delivery_reject">确认拒收?</string>
+    <string name="location_hint">妥投需要记录当前位置，请开启定位</string>
+    <string name="alert_delivery_empty">请选择宅配单号</string>
+    <string name="alert_delivery_confirm">确认接单?</string>
+    <string name="alert_delivery">确认接单?</string>
+    <string name="alert_delivery_send">确认妥投?</string>
+    <string name="alert_confirm">确认</string>
+    <string name="alert_cancel">取消</string>
+
+    <string name="alert_title">提示</string>
+    <string name="please_choose_reason">请选择拒收原因</string>
+    <string name="title_home_delivery_detail">宅配详情</string>
+    <string name="home_delivery_id">运单号 : %s</string>
+    <string name="home_delivery_count">运单件数 : %d</string>
+    <string name="what_word_count">0/%d</string>
+
+
+    <string name="title_refuse_reason">拒收原因</string>
+    <string name="refuse_reason_post_no_other">%s</string>
+    <string name="refuse_reason_post">%1s其他原因:%2s</string>
+    <string name="title_unusual_delivery">异常妥投</string>
+    <string name="title_unusual_error_reason">妥投异常原因</string>
+    <string name="label_distance">距&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;离：</string>
+    <string name="label_orderid">运&#160;&#160;单&#160;&#160;号：</string>
+    <string name="label_consignee">收&#160;&#160;货&#160;&#160;人：</string>
+    <string name="label_phone">电话号码：</string>
+    <string name="label_address">收货地址：</string>
+    <string name="label_count">运单件数：</string>
+    <string name="label_createtime">下单时间：</string>
+    <string name="label_prodlist">商品列表：</string>
+    <string name="tip_login_failure">登录失败，您今日还可以重试%d次</string>
+    <string name="tip_login_diable">您今日已超过登录次数</string>
+    <string name="logout">确认退出？</string>
+    <string name="exception_selection">请选择异常原因</string>
+    <string name="unline_failure_complete">离线妥投失败，请手动妥投!</string>
+    <string name="unline_failure_reject">离线拒收失败，请手动拒收！</string>
+    <string name="unlinetasking">正在执行离线任务</string>
+    <string name="unline_failure_complete_force">离线妥投失败，请联系站长</string>
+    <string name="unline_failure_reject_force">离线拒收失败，请联系站长</string>
+    <string name="delivery_complete_time_exception">妥投时间异常</string>
+    <string name="delivery_reject_time_exception">拒收时间异常</string>
+
+    <string name="str_jsd">极速达</string>
+    <string name="str_bigcustomer">大客户</string>
+    <string name="please_termina_reason">请选择终止原因</string>
 </resources>

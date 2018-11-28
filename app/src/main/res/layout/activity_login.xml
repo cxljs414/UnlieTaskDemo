@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f7f7f7"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            app:srcCompat="@drawable/ic_login_logo"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_46"
+            android:background="@android:color/background_light"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_6">
+
+            <EditText
+                android:id="@+id/et_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_46"
+                android:background="@android:color/background_light"
+                android:drawableLeft="@drawable/ic_user"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="center_vertical"
+                android:hint="请输入用户名"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789."
+                android:maxLines="1"
+                android:maxLength="20"
+                android:textSize="@dimen/sp_16"/>
+
+            <View style="@style/SplitLineStyle"></View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_46"
+                    android:background="@android:color/background_light"
+                    android:drawableLeft="@drawable/ic_pwd"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:paddingEnd="35dp"
+                    android:gravity="center_vertical"
+                    android:hint="请输入密码"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:textSize="@dimen/sp_16"/>
+                <CheckBox
+                    android:id="@+id/showpass_check"
+                    android:layout_width="35dp"
+                    android:layout_height="@dimen/dp_46"
+                    android:button="@drawable/pass_hide_show_background"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/failure_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textColor="@color/color_red"
+            android:textSize="@dimen/dp_12"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/bt_login"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_34"
+            android:layout_marginLeft="@dimen/dp_14"
+            android:layout_marginRight="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_30"
+            android:background="@color/button_color"
+            android:text="登录"
+            android:textColor="@android:color/background_light"
+            android:textSize="@dimen/sp_18"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dp_16"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp_16"/>
+</RelativeLayout>

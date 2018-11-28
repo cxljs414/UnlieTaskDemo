@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@drawable/conner_bg_white_shape"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        >
+
+        <TextView
+            android:id="@+id/txt_DialogTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="异常妥投确认"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/dp_20"
+            android:textSize="@dimen/sp_20"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/btn_CloseRoot"
+            android:layout_width="@dimen/dp_70"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            >
+
+        <ImageButton
+            android:id="@+id/imb_DialogClose"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:background="@mipmap/dialog_close"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_gravity="center_vertical|right"
+            />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:alpha="0.1"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:background="@android:color/black" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_300"
+        android:id="@+id/lis_Product"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:divider="@color/background_primary"
+        android:dividerHeight="2px"
+        android:listSelector="@android:color/transparent"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:alpha="0.1"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:background="@android:color/black" />
+
+    <Button
+        android:id="@+id/bt_submit"
+        android:layout_width="@dimen/dp_120"
+        android:layout_height="@dimen/dp_40"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:background="@drawable/conner_bg_shape"
+        android:text="确定"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_14"/>
+
+</LinearLayout>

@@ -20,6 +20,54 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    signingConfigs {
+        release {
+            keyAlias project.hasProperty('KEY_ALIAS') ? KEY_ALIAS : KEYALISA
+            keyPassword project.hasProperty('KEY_PWD') ? KEY_PWD : KEY_PASSWORD
+            storeFile file(project.hasProperty('STORE_FILE') ? STORE_FILE : '../buildsystem/andr.jks')
+            storePassword  project.hasProperty('STORE_PWD') ? STORE_PWD : KEYSTORE_PASSWORD
+        }
+
+        debug {
+            keyAlias project.hasProperty('KEY_ALIAS') ? KEY_ALIAS : KEYALISA
+            keyPassword project.hasProperty('KEY_PWD') ? KEY_PWD : KEY_PASSWORD
+            storeFile file(project.hasProperty('STORE_FILE') ? STORE_FILE : '../buildsystem/debug.jks')
+            storePassword  project.hasProperty('STORE_PWD') ? STORE_PWD : KEYSTORE_PASSWORD
+        }
+
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def fileName = "xstore-tms"
+
+            if (variant.buildType.name == "release") {
+                fileName += "-${defaultConfig.versionName}"
+            } else if (variant.buildType.name == "preannounce") {
+                fileName += "-${releaseTime()}_${defaultConfig.versionName}"
+            } else if (variant.buildType.name == "debug") {
+                fileName += "-${releaseTime()}"
+            }
+            fileName += "-${variant.buildType.name}.apk"
+            outputFileName = fileName
+        }
+    }
+
+    tasks.whenTaskAdded {
+        task ->
+            android.productFlavors.all {
+                if (task.name.startsWith("assemble")
+                        && task.name.endsWith("Release")) {
+                    task.doLast {
+                        copyMapping(task.name
+                                .replace("assemble", "")
+                                .replace("Release", ""),
+                        )
+                    }
+                }
+            }
+    }
 }
 
 dependencies {
@@ -30,4 +78,50 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation project(':push_mix_sdk_1.5.0')
+    implementation project(':task_unline')
+    implementation(group: 'com.jingdong.wireless.libs', name: 'jdmasdk', version: '4.0.7')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.ext.kotlinLibraryVersion"
+    implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideLibraryVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.ext.glideLibraryVersion"
+    implementation "com.github.bumptech.glide:okhttp3-integration:$rootProject.ext.glideLibraryVersion"
+    implementation "com.leinyo.android:httpclient:$rootProject.ext.httpClientLibrary"
+    implementation "org.apache.commons:commons-lang3:$rootProject.ext.commonsLangVersion"
+    implementation "com.amap.api:map2d:$rootProject.ext.ampMapLibraryVersion"
+    implementation "com.leinyo.android:appbar:$rootProject.ext.appbarLibraryVersion"
+    implementation "com.leinyo.android:pullrefresh:$rootProject.ext.pullrefreshLibraryVersion"
+    implementation "com.tencent.bugly:crashreport:$rootProject.ext.buglycrashreportLibraryVersion"
+    implementation "com.tencent.bugly:nativecrashreport:$rootProject.buglynativecrashreporLibraryVersion"
+    implementation "org.greenrobot:eventbus:$rootProject.ext.eventbusLibraryVersion"
+    implementation "com.amap.api:location:$rootProject.ext.ampLocationLibraryVersion"
+    //    implementation 'com.jaeger.statusbarutil:library:1.5.1'
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+    implementation 'com.jd.ace:Ace:1.8-SNAPSHOT@aar'
+    implementation 'com.jd.crash:JDCrashReport:1.1.0'
+    implementation 'com.jd.crash:JDNativeCrashReport:1.1.0'
+    implementation 'com.luffykou:android-common-utils:1.1.3'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation "io.reactivex.rxjava2:rxjava:2.1.9"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$rootProject.ext.kotlinLibraryVersion"
+}
+
+
+def static releaseTime() {
+    return new Date().format("yyyyMMdd-HHmmss")
+}
+
+//为接入鹰眼，每次打包要有新的mapping文件
+def copyMapping(String name) {
+    copy {
+        String renameName = "mapping_" + name.toLowerCase() + "_" +
+                android.defaultConfig.versionCode + "_" +
+                android.defaultConfig.versionName + "-" +
+                releaseTime() +".txt"
+        from "$buildDir" + '/outputs/mapping/' + name + '/release/'
+        include "mapping.txt"
+        into "mapping/"
+        rename { renameName }
+    }
 }

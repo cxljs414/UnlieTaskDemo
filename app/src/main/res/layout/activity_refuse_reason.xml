@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/unlinetasktip"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="@string/unline_failure_reject"
+        android:textColor="@color/color_red"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_10"
+        android:visibility="gone"
+        android:background="@color/corner_color"/>
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_below="@id/unlinetasktip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_10"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择原因"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_type1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_rg_refuse_reason"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:text="商品破损"
+                android:textColor="@drawable/selector_text_refuse_reason"/>
+
+            <CheckBox
+                android:id="@+id/cb_type2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_weight="1"
+                android:background="@drawable/selector_rg_refuse_reason"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:text="商品数量不符"
+                android:textColor="@drawable/selector_text_refuse_reason"/>
+
+            <CheckBox
+                android:id="@+id/cb_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_weight="1"
+                android:background="@drawable/selector_rg_refuse_reason"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:text="其他原因"
+                android:textColor="@drawable/selector_text_refuse_reason"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_other_reason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_top"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_10"
+        android:visibility="gone">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="其他原因"/>
+
+        <com.xstore.tms.android.widget.CounterEditTextView
+            android:id="@+id/et_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:counter_hint="请输入其他原因..."
+            app:counter_max_length="200"
+            app:counter_lines="12"
+            app:counter_padding="@dimen/dp_10">
+        </com.xstore.tms.android.widget.CounterEditTextView>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/bt_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll_other_reason"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="#d7d7d7"
+        android:enabled="false"
+        android:padding="@dimen/dp_16"
+        android:text="确认拒收"
+        android:textColor="@color/c2c2c2"
+        android:textSize="@dimen/sp_18"/>
+</RelativeLayout>

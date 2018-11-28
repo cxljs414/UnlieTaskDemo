@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_primary">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_primary"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_6"
+            android:layout_marginTop="@dimen/dp_6"
+            android:text="客户拒收原因:"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18"/>
+        <View
+            style="@style/SplitLineStyle"
+            android:layout_marginTop="@dimen/dp_10"/>
+        <RadioGroup
+            android:id="@+id/rg_reason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_2"
+            android:layout_marginTop="@dimen/dp_2">
+            <RadioButton
+                android:id="@+id/reason1"
+                android:layout_weight="1"
+                style="@style/radio_button"
+                android:text="客户不买了" />
+            <RadioButton
+                android:id="@+id/reason2"
+                android:layout_weight="1"
+                style="@style/radio_button"
+                android:text="客户不在家" />
+            <RadioButton
+                android:id="@+id/reason3"
+                android:layout_weight="1"
+                style="@style/radio_button"
+                android:text="商品有损或不全" />
+        </RadioGroup>
+        <View
+            style="@style/SplitLineStyle"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18"/>
+            <View style="@style/SplitLineVerticalStyle" ></View>
+            <TextView
+                android:id="@+id/tv_submit"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="提交"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sp_18"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -2,20 +2,225 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cx.unlietaskdemo">
 
+    <!-- 申请权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- 拨打电话权限 -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> &lt;!&ndash; 粗略定位权限 &ndash;&gt; -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> &lt;!&ndash; 精确定位权限 &ndash;&gt; -->
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" /> <!-- 闪光灯 -->
+
+    <uses-feature android:name="android.hardware.camera.flash" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera" />
+
+    <!-- 用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 用于访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 用于写入缓存数据到扩展存储卡 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 用于申请调用A-GPS模块 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- 用于申请获取蓝牙信息进行室内定位 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- 小米 -->
+    <permission
+        android:name="${PNAME}.permission.MIPUSH_RECEIVE"
+        android:protectionLevel="signature" />
+    <!-- 这里com.xiaomi.mipushdemo改成app的包名 -->
+    <uses-permission android:name="${PNAME}.permission.MIPUSH_RECEIVE" />
+    <!-- 这里com.xiaomi.mipushdemo改成app的包名 -->
+
+
+    <!-- 魅族flyme -->
+    <uses-permission android:name="com.meizu.flyme.push.permission.RECEIVE" />
+
+    <permission
+        android:name="${PNAME}.push.permission.MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="${PNAME}.push.permission.MESSAGE" />
+
+    <!-- 兼容flyme3.0配置权限 -->
+    <uses-permission android:name="com.meizu.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="${PNAME}.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="${PNAME}.permission.C2D_MESSAGE" />
+
+    <!-- 使用照相机权限 -->
+    <!-- 自动聚焦权限 -->
     <application
-        android:allowBackup="true"
+        android:name=".AppApplication"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:persistent="true"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/MyAppTheme"
+        tools:replace="android:allowBackup">
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="${AMAP_KEY}" />
+        <meta-data
+            android:name="JDPUSH_APPID"
+            android:value="${JDPUSH_APPID}" />
+        <!-- 来自开发者平台取得的AppID -->
+        <meta-data
+            android:name="JDPUSH_APPSECRET"
+            android:value="${JDPUSH_APPSECRET}" />
+        <!-- JDPUSH_APPSECRET 可以定义为Appid+你的appid -->
+
+        <meta-data
+            android:name="DEBUG"
+            android:value="${DEBUG}" />
+        <!-- 开发环境配置:0线上,1测试 -->
+
+        <!-- <meta-data
+             android:name="MIUI_APPID"
+             android:value="${MIUI_APPID}" />
+         <meta-data
+             android:name="MIUI_APPKEY"
+             android:value="${MIUI_APPKEY}" />
+         <meta-data
+             android:name="FLYME_APPID"
+             android:value="${FLYME_APPID}" />
+         <meta-data
+             android:name="FLYME_APPKEY"
+             android:value="${FLYME_APPKEY}" />-->
+
+        <receiver
+            android:name=".receiver.MyPushReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.push.msg.receiver.action" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".core.location.LocationService" />
+
+        <activity
+            android:name=".ui.ScanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.LoginActivityKt"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.delivery.DeliveryDetailActivityKt"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.delivery.DeliveryListActivityKt"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.MainActivityKt"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Main"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.ro.ReturnOrderActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <service android:name="com.amap.api.location.APSService" />
+        <activity
+            android:name=".ui.performance.CourierPerformanceOrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ro.ReturnOrderDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.homedelivery.HomeDeliveryActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.collection.CollectionOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.homedelivery.HomeDeliveryDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.performance.PerformanceActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.delivery.EasyOutboundActivity" />
+        <activity
+            android:name=".ui.delivery.DeliveryRefuseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.delivery.DeliveryUnusualActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.delivery.DeliveryUnusualReasonActivity" />
+
+        <service
+            android:name="com.jingdong.sdk.jdcrashreport.CrashService"
+            android:process=":jdcrashreport" />
+
+        <activity
+            android:name="com.jingdong.sdk.jdcrashreport.recovery.RecoverActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:process=":jdcrashreport"
+            android:screenOrientation="portrait" />
+
+        <service android:name=".service.AlarmService" />
+
+        <activity android:name=".ui.PushSkipActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:theme="@style/NoTitleTranslucentTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:authorities="com.xstore.tms.Task"
+            android:name=".provider.TaskProvider"/>
+
+
     </application>
 
 </manifest>

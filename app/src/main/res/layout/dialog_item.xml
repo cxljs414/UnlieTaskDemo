@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_88"
+
+    >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_88"
+        android:layout_weight="0.3"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/img_ProductPic"
+            android:layout_width="@dimen/dp_70"
+            android:layout_height="@dimen/dp_70"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ic_launcher"
+            android:layout_marginTop="10dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_ProductDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="商品名称描述"
+            android:textStyle="bold"
+            android:lines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/sp_14"
+            />
+
+        <TextView
+            android:id="@+id/txt_DeliveryMistake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_dialog_item_sub"
+            android:text="商品错发"
+            android:textSize="@dimen/sp_13"
+            />
+        <TextView
+            android:id="@+id/txt_DeliveryLeak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="商品漏发"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/color_dialog_item_sub"
+            />
+        <TextView
+            android:id="@+id/txt_ProductDamage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="商品破损"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/color_dialog_item_sub"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

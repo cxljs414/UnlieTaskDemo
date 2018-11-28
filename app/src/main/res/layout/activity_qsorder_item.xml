@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_8"
+    android:background="@color/colorThemeBackground_1"
+    android:orientation="vertical">
+    <View style="@style/SplitLineStyle"></View>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/dp_40"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_6"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            style="@style/text_label"
+            android:text="运单号：" />
+        <TextView
+            android:id="@+id/id_waybill_number"
+            style="@style/text_content"
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:text="68000015401401" />
+        <com.xstore.tms.android.widget.OrderDateView
+            android:id="@+id/order_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"/>
+        <!--<TextView-->
+            <!--android:id="@+id/id_time_remaining"-->
+            <!--android:background="@drawable/ic_red_flag"-->
+            <!--android:layout_width="@dimen/dp_36"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:paddingTop="@dimen/dp_2"-->
+            <!--android:textSize="@dimen/sp_12"-->
+            <!--android:text="还剩\n0分"-->
+            <!--android:textColor="#FFFFFF"-->
+            <!--android:textAlignment="center"-->
+            <!--/>-->
+    </LinearLayout>
+    <View
+        android:layout_marginRight="@dimen/dp_16"
+        android:layout_marginLeft="@dimen/dp_16"
+        style="@style/SplitLineStyle"></View>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_26"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/sp_14"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_6"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            style="@style/text_label"
+            android:drawablePadding="@dimen/dp_6"
+            android:drawableLeft="@drawable/ic_phone"
+            android:text=" 电　话：" />
+        <TextView
+            android:id="@+id/id_phone_number"
+            style="@style/text_content"
+            android:text="13520474920" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/sp_14"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_6"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            style="@style/text_label"
+            android:drawablePadding="@dimen/dp_6"
+            android:drawableLeft="@drawable/ic_address_location"
+            android:text=" 地　址：" />
+        <!--<com.xstore.tms.android.widget.AutoFitTextView-->
+            <!--android:id="@+id/id_address"-->
+            <!--style="@style/text_content"-->
+            <!--android:text=""-->
+            <!--&gt;-->
+        <!--</com.xstore.tms.android.widget.AutoFitTextView>-->
+        <TextView
+            android:id="@+id/id_address"
+            style="@style/text_content"
+            android:text="" />
+    </LinearLayout>
+    <View style="@style/SplitLineStyle"></View>
+</LinearLayout>

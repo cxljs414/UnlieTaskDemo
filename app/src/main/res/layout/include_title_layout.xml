@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+    >
+
+    <com.leinyo.android.appbar.AppBar
+        android:id="@+id/toolbar"
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        app:center_title_size="@dimen/sp_20"
+        app:center_title_color="@android:color/white"
+        app:left_back="@drawable/scanner_back_img"
+        app:contentInsetStart="0dp"
+        android:paddingStart="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_10"
+        android:layout_height="?attr/actionBarSize"/>
+    <View
+        android:id="@+id/split_line"
+        style="@style/SplitLineStyle"/>
+
+</LinearLayout>

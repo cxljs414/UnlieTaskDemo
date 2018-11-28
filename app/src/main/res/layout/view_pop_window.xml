@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/ic_pop_window"
+              android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_services"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:drawablePadding="@dimen/dp_20"
+        android:drawableStart="@drawable/ic_tel"
+        android:padding="@dimen/dp_12"
+        android:text="联系客服"
+        android:textSize="@dimen/sp_16"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_appbar_split_line"/>
+
+    <TextView
+        android:id="@+id/tv_reject_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:drawablePadding="@dimen/dp_20"
+        android:drawableStart="@drawable/ic_refuse"
+        android:gravity="center_vertical"
+        android:padding="@dimen/dp_12"
+        android:text="确认拒收"
+        android:textSize="@dimen/sp_16"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_appbar_split_line"/>
+
+    <TextView
+        android:id="@+id/tv_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:drawablePadding="@dimen/dp_20"
+        android:drawableStart="@drawable/ic_error"
+        android:gravity="center_vertical"
+        android:padding="@dimen/dp_12"
+        android:text="异常妥投"
+        android:textSize="@dimen/sp_16"/>
+</LinearLayout>

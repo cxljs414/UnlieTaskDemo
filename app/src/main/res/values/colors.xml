@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+
+    <!-- 系统基础色调 -->
+    <color name="colorTheme">#204560</color>
+    <color name="colorThemeBackground_0">#f7f7f7</color>
+    <color name="colorThemeBackground_1">#fdfdfe</color>
+    <color name="colorThemeBackLine">#b8ebebeb</color>
+
+
+    <!--<color name="colorPrimary">#3F51B5</color>-->
+    <!--<color name="colorPrimaryDark">#303F9F</color>-->
+    <color name="colorAccent">#D7D7D7</color>
+    <color name="colorViewText00">#000000</color>
+    <color name="colorViewText01">#bebebe</color>
+    <color name="colorViewText02">#FFFFFF</color>
+    <color name="colorViewText03">#666666</color>
+    <color name="colorButtonText">#838383</color>
+    <color name="background_primary">#f7f7f7</color>
+    <color name="c2c2c2">#c2c2c2</color>
+    <!-- QRCode scanner color begin -->
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="result_view">#B0000000</color>
+    <color name="viewfinder_frame">#90FFFFFF</color>
+    <color name="result_point_color">#C0FFFF00</color>
+    <color name="laser_color">#E45252</color>
+    <color name="corner_color">#FFFFFF</color>
+    <color name="colorPrimaryDark">#204560</color>
+    <color name="colorPrimary">#204560</color>
+    <color name="navigationBarColor">#3399ff</color>
+    <color name="colorPrimaryDarkTrans">#00cc66</color>
+    <!-- QRCode scanner color end -->
+
+    <color name="button_color">#204560</color>
+
+    <color name="color_appbar_split_line">#dedede</color>
+    <color name="color_dialog_item_sub">#898989</color>
+    <color name="color_red">#FF3827</color>
+
+    <color name="transparent">#00ffffff</color>
+
+    <color name="disable_btn">#b3b1b1</color>
 </resources>

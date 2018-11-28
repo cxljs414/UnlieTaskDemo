@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            style="@style/text_title"
+            android:text="请选择拒绝理由"
+            />
+        <TextView
+            android:id="@+id/tv_close"
+            style="@style/text_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="@dimen/dp_10"
+            android:text="关闭"
+            />
+    </FrameLayout>
+    <View style="@style/SplitLineStyle" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rb_stockout"
+            style="@style/radio_button"
+            android:text="商品缺货" />
+        <View style="@style/SplitLineStylePadding" />
+        <RadioButton
+            android:id="@+id/rb_damaged"
+            style="@style/radio_button"
+            android:text="商品破损" />
+    </RadioGroup>
+    <com.xstore.tms.android.widget.BottomConfirmBar
+        android:id="@+id/bottom_confirm_bar_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cancel_button_text="取消"
+        app:confirm_button_text="确认"
+        >
+    </com.xstore.tms.android.widget.BottomConfirmBar>
+</LinearLayout>

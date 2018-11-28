@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!-- 二维码识别界面 -->
+    <com.arseeds.ar.CameraPreview
+        android:id="@+id/cp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.arseeds.ar.CameraPreview>
+
+
+    <com.arseeds.ar.view.ScanView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimaryDark"
+        android:fitsSystemWindows="true">
+
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="bottom">
+
+            <ImageView
+                android:id="@+id/mo_scanner_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:padding="6dp"
+                android:src="@drawable/scanner_back_img" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="扫描集合单"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:layout_marginBottom="0dp"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:weightSum="1"   >
+
+
+
+
+
+
+        <LinearLayout style="@style/MatchWrap.Horizontal"
+            android:layout_width="250dp" android:layout_marginBottom="10dp"
+            android:layout_weight="1" android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/open_flashlight"
+                style="@style/AutoWrapTv"
+                android:layout_gravity="bottom"
+                android:text="开灯"/>
+
+            <TextView
+                android:id="@+id/close_flashlight"
+                style="@style/AutoWrapTv"
+                android:layout_gravity="bottom"
+                android:text="关灯"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

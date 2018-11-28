@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|top"
+        android:hint="请输入拒收原因"
+        android:inputType="textMultiLine"
+        android:minHeight="200dp"
+        android:padding="10dip"
+        android:textSize="13sp"/>
+
+    <TextView
+        android:id="@+id/tv_word_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/et_content"
+        android:layout_gravity="right"
+        android:layout_margin="5dip"
+        android:text="0/200"
+        android:visibility="visible"/>
+</merge>

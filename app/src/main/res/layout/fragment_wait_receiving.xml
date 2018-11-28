@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <com.leinyo.easy_refresh.widget.ptr.PullToRefreshView
+        android:id="@+id/pull_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_bottom"
+        android:layout_marginTop="@dimen/dp_10"
+        app:ptr_header_mode="normal"
+        app:ptr_refresh_mode="both">
+    </com.leinyo.easy_refresh.widget.ptr.PullToRefreshView>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <View style="@style/SplitLineStyle"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/dp_18"
+                android:text="取消接单"
+                android:textColor="@color/button_color"
+                android:textSize="@dimen/sp_16"/>
+
+            <TextView
+                android:id="@+id/tv_confirm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/button_color"
+                android:gravity="center"
+                android:padding="@dimen/dp_18"
+                android:text="确认接单"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sp_16"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

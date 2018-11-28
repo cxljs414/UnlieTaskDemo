@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shareInterpolator="@anim/cycle">
+    <translate
+        android:duration="30"
+        android:fromXDelta="0"
+        android:fromYDelta="0"
+        android:toXDelta="-100"
+        android:toYDelta="0" />
+    <translate
+        android:duration="30"
+        android:fromXDelta="0"
+        android:fromYDelta="0"
+        android:startOffset="30"
+        android:toXDelta="100"
+        android:toYDelta="0" />
+    <translate
+        android:duration="30"
+        android:fromXDelta="0"
+        android:fromYDelta="0"
+        android:startOffset="60"
+        android:toXDelta="-100"
+        android:toYDelta="0" />
+    <translate
+        android:duration="30"
+        android:fromXDelta="0"
+        android:fromYDelta="0"
+        android:startOffset="90"
+        android:toXDelta="100"
+        android:toYDelta="0" />
+
+</set>

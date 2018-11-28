@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="#333">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/backButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="39dp"
+            android:layout_height="37dp"
+            android:background="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/scanner_toolbar_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.66"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="扫一扫"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/lightbutton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="46dp"
+            android:layout_height="38dp"
+            android:background="@drawable/ic_light" />
+
+        <!--<ImageView-->
+            <!--android:id="@+id/scanner_toolbar_more"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:paddingRight="20dp"-->
+            <!--android:src="@mipmap/abc_ic_menu_moreoverflow_mtrl_alpha"/>-->
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.Toolbar>

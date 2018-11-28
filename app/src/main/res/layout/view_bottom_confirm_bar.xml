@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <View style="@style/SplitLineStyle" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_46">
+        <TextView
+            android:id="@+id/tv_cancel_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/colorTheme"
+            android:text="取消接单"
+            />
+        <TextView
+            android:id="@+id/tv_confirm_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/sp_18"
+            android:background="@color/colorTheme"
+            android:textColor="@color/colorViewText02"
+            android:text="确认接单"
+            />
+    </LinearLayout>
+</LinearLayout>

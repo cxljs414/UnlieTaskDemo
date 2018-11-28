@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/colorThemeBackground_0"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sp_32"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+        <ImageView
+            android:layout_width="@dimen/sp_30"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_rollback"
+            />
+        <TextView
+            android:id="@+id/title_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/sp_30"
+            android:text="标题"
+            android:textAlignment="center" />
+    </LinearLayout>
+    <View style="@style/SplitLineStyle"/>
+</LinearLayout>
